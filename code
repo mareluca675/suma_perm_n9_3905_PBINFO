@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long n, nrcif = 0, scif = 0, k = 0, fact = 1, i = 1;
+    
+    cin >> n;
+    
+    while(n > 0)
+    {
+        int uc = n % 10;
+        nrcif ++;
+        scif += uc;
+        k = k * 10 + 1;
+        n = n / 10;
+    }
+    
+    while(i <= nrcif - 1)
+    {
+        fact = fact * i;
+        i ++;
+    }
+    
+    cout << k * fact * scif;
+
+    return 0;
+}
